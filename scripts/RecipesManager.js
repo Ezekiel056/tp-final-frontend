@@ -1,3 +1,4 @@
+import Globals from "./Globals.js";
 export default class RecipesManager {
   #recipes;
 
@@ -12,7 +13,7 @@ export default class RecipesManager {
   static getTagColor(type, value) {}
 
   #getRecipesFromLocalStorage() {
-    let recipes = localStorage.getItem("recipes");
+    let recipes = localStorage.getItem(Globals.LS_RECIPES);
     return recipes != null ? JSON.parse(recipes) : this.initFirstVisit();
   }
 
@@ -24,7 +25,7 @@ export default class RecipesManager {
         duration: "60",
         level: "facile",
         favortie: false,
-        image: "/assets/images/tarte-aux-pommes.png",
+        image: "tarte-aux-pommes.png",
       },
       {
         name: "Ratatouille provençale",
@@ -32,7 +33,7 @@ export default class RecipesManager {
         duration: "45",
         level: "moyen",
         favortie: false,
-        image: "/assets/images/ratatouille-provencale.png",
+        image: "ratatouille-provencale.png",
       },
       {
         name: "Velouté de potiron",
@@ -40,11 +41,51 @@ export default class RecipesManager {
         duration: "30",
         level: "facile",
         favortie: false,
-        image: "/assets/images/veloute-de-potiron.png",
+        image: "veloute-de-potiron.png",
+      },
+      {
+        name: "Salade César",
+        category: "entrée",
+        duration: "30",
+        level: "facile",
+        favortie: false,
+        image: "salade-cesar.png",
+      },
+      {
+        name: "Bœuf bourguignon",
+        category: "plat",
+        duration: "60",
+        level: "difficile",
+        favortie: false,
+        image: "boeuf-bourgignon.png",
+      },
+      {
+        name: "Pâtes carbonara",
+        category: "plat",
+        duration: "30",
+        level: "facile",
+        favortie: false,
+        image: "pates-carbo.png",
+      },
+      {
+        name: "Mousse au chocolat",
+        category: "dessert",
+        duration: "45",
+        level: "facile",
+        favortie: false,
+        image: "mousse-chocolat.png",
+      },
+      {
+        name: "Crème brûlée",
+        category: "dessert",
+        duration: "30",
+        level: "moyen",
+        favortie: false,
+        image: "creme-brulee.png",
       },
     ];
 
-    localStorage.setItem("recipes", JSON.stringify(recipes));
+    localStorage.setItem(Globals.LS_RECIPES, JSON.stringify(recipes));
     return recipes;
   }
 

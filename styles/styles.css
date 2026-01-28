@@ -34,6 +34,11 @@
   --tag-color-blue: #3796db;
   --spacer-color: #e8e8e8;
 }
+.dark {
+  --bg: #121212;
+  --text: #eeeeee;
+  --card-bg: #1e1e1e;
+}
 
 main {
   padding: 0 var(--gloabal-spacing);

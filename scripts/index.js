@@ -1,4 +1,5 @@
 import RecipesManager from "./RecipesManager.js";
+import Globals from "./Globals.js";
 
 /*
  ******* GLOBALS VARIABLES ***************
@@ -11,6 +12,11 @@ let recipes = recipesManager.recipes;
  */
 const btnSearch = document.getElementById("search-recipe-btn");
 const recipesList = document.getElementById("recipes-list");
+
+/*
+  START SCRIPT
+*/
+Globals.getUserPreferences();
 
 function filterRecipes(e = null) {
   e.preventDefault();
@@ -45,7 +51,7 @@ function generateRecipesList() {
     recipesList.innerHTML += `
   <article class="recipe card">
     <img
-      src="${capitalize(recipe.image)}"
+      src="/assets/images/${capitalize(recipe.image)}"
       alt="une image de ${recipe.name}"
     />
     <div class="recipe-content">
