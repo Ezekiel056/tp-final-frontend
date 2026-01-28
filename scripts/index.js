@@ -11,12 +11,24 @@ let recipes = recipesManager.recipes;
  ******* DOM ELEMENTS *******************
  */
 const btnSearch = document.getElementById("search-recipe-btn");
+const btnDarkMode = document.getElementById("display-mod");
 const recipesList = document.getElementById("recipes-list");
 
 /*
   START SCRIPT
 */
-Globals.getUserPreferences();
+main();
+
+function main() {
+  Globals.getUserPreferences();
+  applyDisplayMode();
+}
+
+function applyDisplayMode() {
+  if (Globals.userPreferences.displayMode === "light")
+    document.body.classList.remove("dark");
+  else document.body.classList.add("dark");
+}
 
 function filterRecipes(e = null) {
   e.preventDefault();
@@ -58,9 +70,9 @@ function generateRecipesList() {
       <h2>${recipe.name}</h2>
       <div class="tags-list">
         <ul>
-          <li class="tag orange">${capitalize(recipe.category)}</li>
-          <li class="tag green">${recipe.duration} min</li>
-          <li class="tag blue">${capitalize(recipe.level)}</li>
+          <li class="tag category">${capitalize(recipe.category)}</li>
+          <li class="tag duration">${recipe.duration} min</li>
+          <li class="tag level">${capitalize(recipe.level)}</li>
         </ul>
       </div>
       <button class="primary">Voir la recette</button>
@@ -73,9 +85,15 @@ function generateRecipesList() {
 function capitalize(str) {
   return str[0].toUpperCase() + str.slice(1);
 }
-refreshList();
+
+function toggleDarkMode() {
+  Globals.toggleDisplayMode();
+  applyDisplayMode();
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   btnSearch.addEventListener("click", filterRecipes);
+  btnDarkMode.addEventListener("click", toggleDarkMode);
 
   const filters = document.querySelector(".filters-container");
   filters.addEventListener("change", (e) => {
@@ -83,4 +101,6 @@ window.addEventListener("DOMContentLoaded", () => {
       filterRecipes(e);
     }
   });
+
+  refreshList();
 });

@@ -83,6 +83,22 @@ export default class RecipesManager {
         favortie: false,
         image: "creme-brulee.png",
       },
+      {
+        name: "Burger",
+        category: "plat",
+        duration: "30",
+        level: "facile",
+        favortie: false,
+        image: "burger.png",
+      },
+      {
+        name: "Mille-feuiles",
+        category: "dessert",
+        duration: "60",
+        level: "difficile",
+        favortie: false,
+        image: "mille-feuille.png",
+      },
     ];
 
     localStorage.setItem(Globals.LS_RECIPES, JSON.stringify(recipes));

@@ -26,4 +26,10 @@ export default class Globals {
       JSON.stringify(Globals.userPreferences),
     );
   }
+
+  static toggleDisplayMode() {
+    Globals.userPreferences.displayMode =
+      Globals.userPreferences.displayMode === "light" ? "dark" : "light";
+    Globals.saveUserPreferences();
+  }
 }

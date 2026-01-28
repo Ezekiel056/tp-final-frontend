@@ -15,6 +15,7 @@
   --gloabal-spacing: 15px;
   --input-border-radius: 4px;
   --button-border-radius: 4px;
+  --focus-color: #213da2;
 
   /* =================================
   SECTION :  Theme Light
@@ -24,20 +25,50 @@
   --background-color: #ffff;
 
   --button-background-color: var(--primary-color);
+  --button-hover-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --input-background-color: #fff;
   --text-color: #636363;
   --text-color-sections: #c58146;
 
   --card-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --card-background-color: #fff;
 
-  --tag-color-orange: var(--primary-color);
-  --tag-color-green: #2ccb73;
-  --tag-color-blue: #3796db;
+  --tag-color-category: var(--primary-color);
+  --tag-color-duration: #2ccb73;
+  --tag-color-level: #3796db;
   --spacer-color: #e8e8e8;
 }
+
+/* =================================
+  SECTION :  Theme dark
+  ================================= */
 .dark {
-  --bg: #121212;
-  --text: #eeeeee;
-  --card-bg: #1e1e1e;
+  --primary-color: #e67f21;
+
+  --background-color: #1a1b20;
+  --background-grey: #21232a;
+
+  --button-background-color: var(--primary-color);
+  --button-hover-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(230, 127, 33, 0.4);
+
+  --input-background-color: #292b33;
+
+  --text-color: #e0e0e0;
+  --text-color-sections: #f0a15c;
+
+  --card-box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 12px;
+  --card-background-color: #1f2128;
+
+  --tag-color-category: var(--primary-color);
+  --tag-color-duration: #2ccb73;
+  --tag-color-level: #4aa3e0;
+
+  --spacer-color: #2a2a2a;
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 main {
@@ -52,6 +83,7 @@ ol {
 button {
   border: none;
   outline: none;
+
   cursor: pointer;
   padding: 5px;
 
@@ -62,14 +94,34 @@ button {
     border-radius: var(--button-border-radius);
     padding: 5px;
   }
+
+  &:hover {
+    transition:
+      box-shadow 200ms ease,
+      transform 200ms ease;
+    box-shadow: var(--button-hover-shadow);
+    transform: translateY(-1px);
+  }
 }
 
 input {
   padding: 10px;
-  border: 1px lightgray solid;
+  border: 1px var(--spacer-color) solid;
   border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  color: var(--text-color);
 }
 
+input,
+button,
+a {
+  outline: none;
+  &:focus-visible {
+    box-shadow:
+      0 0 0 3px var(--background-color),
+      0 0 0 6px var(--focus-color);
+  }
+}
 /* =================================
 SECTION : COMMON CLASSES
 ================================= */
@@ -79,16 +131,16 @@ SECTION : COMMON CLASSES
   color: white;
   font-size: 0.9rem;
   border-radius: 12px;
-  &.orange {
-    background-color: var(--tag-color-orange);
+  &.category {
+    background-color: var(--tag-color-category);
   }
 
-  &.blue {
-    background-color: var(--tag-color-blue);
+  &.level {
+    background-color: var(--tag-color-level);
   }
 
-  &.green {
-    background-color: var(--tag-color-green);
+  &.duration {
+    background-color: var(--tag-color-duration);
   }
 }
 
@@ -104,6 +156,7 @@ SECTION : COMMON CLASSES
   box-shadow: var(--card-box-shadow);
   border-radius: 6px;
   border: none;
+  background-color: var(--card-background-color);
 }
 
 /* =================================
@@ -120,6 +173,7 @@ SECTION : HEADER
   box-shadow: var(--card-box-shadow);
   border-radius: 0 0 4px 4px;
   margin-bottom: var(--gloabal-spacing);
+  background-color: var(--background-color);
 }
 
 .site-logo-container {
