@@ -63,7 +63,7 @@ function generateRecipesList() {
     recipesList.innerHTML += `
   <article class="recipe card">
     <img
-      src="/assets/images/${capitalize(recipe.image)}"
+      src="./assets/images/${recipe.image}"
       alt="une image de ${recipe.name}"
     />
     <div class="recipe-content">
