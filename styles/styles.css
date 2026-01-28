@@ -283,6 +283,9 @@ SECTION : SEARCH & FILTER SECTION
   }
 }
 
+/* =================================
+SECTION : RECIPES
+================================= */
 #recipes-section {
   margin-top: 30px;
 }
@@ -295,8 +298,9 @@ SECTION : SEARCH & FILTER SECTION
 
 .recipe {
   overflow: hidden;
+  position: relative;
 
-  img {
+  > img {
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -305,6 +309,21 @@ SECTION : SEARCH & FILTER SECTION
     font-size: 1.2rem;
     color: var(--text-color);
   }
+}
+
+.favorite {
+  cursor: pointer;
+  border-radius: 50px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  height: 24px;
+  width: 24px;
+  background-color: rgb(222, 222, 222);
+  &.is-favorite {
+    background-color: red;
+  }
+  /* background-color: lightgray; */
 }
 
 .recipe-content {

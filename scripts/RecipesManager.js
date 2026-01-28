@@ -24,7 +24,7 @@ export default class RecipesManager {
         category: "dessert",
         duration: "60",
         level: "facile",
-        favortie: false,
+        favorite: true,
         image: "tarte-aux-pommes.png",
       },
       {
@@ -32,7 +32,7 @@ export default class RecipesManager {
         category: "plat",
         duration: "45",
         level: "moyen",
-        favortie: false,
+        favorite: false,
         image: "ratatouille-provencale.png",
       },
       {
@@ -40,7 +40,7 @@ export default class RecipesManager {
         category: "entrée",
         duration: "30",
         level: "facile",
-        favortie: false,
+        favorite: false,
         image: "veloute-de-potiron.png",
       },
       {
@@ -48,7 +48,7 @@ export default class RecipesManager {
         category: "entrée",
         duration: "30",
         level: "facile",
-        favortie: false,
+        favorite: false,
         image: "salade-cesar.png",
       },
       {
@@ -56,7 +56,7 @@ export default class RecipesManager {
         category: "plat",
         duration: "60",
         level: "difficile",
-        favortie: false,
+        favorite: false,
         image: "boeuf-bourgignon.png",
       },
       {
@@ -64,7 +64,7 @@ export default class RecipesManager {
         category: "plat",
         duration: "30",
         level: "facile",
-        favortie: false,
+        favorite: false,
         image: "pates-carbo.png",
       },
       {
@@ -72,7 +72,7 @@ export default class RecipesManager {
         category: "dessert",
         duration: "45",
         level: "facile",
-        favortie: false,
+        favorite: false,
         image: "mousse-chocolat.png",
       },
       {
@@ -80,7 +80,7 @@ export default class RecipesManager {
         category: "dessert",
         duration: "30",
         level: "moyen",
-        favortie: false,
+        favorite: false,
         image: "creme-brulee.png",
       },
       {
@@ -88,7 +88,7 @@ export default class RecipesManager {
         category: "plat",
         duration: "30",
         level: "facile",
-        favortie: false,
+        favorite: false,
         image: "burger.png",
       },
       {
@@ -96,13 +96,17 @@ export default class RecipesManager {
         category: "dessert",
         duration: "60",
         level: "difficile",
-        favortie: false,
+        favorite: false,
         image: "mille-feuille.png",
       },
     ];
 
-    localStorage.setItem(Globals.LS_RECIPES, JSON.stringify(recipes));
+    this.#saveToLocalStorage(recipes);
     return recipes;
+  }
+
+  #saveToLocalStorage(recipes = this.#recipes) {
+    localStorage.setItem(Globals.LS_RECIPES, JSON.stringify(recipes));
   }
 
   filterRecipes(categories, duration, level, search) {
@@ -129,5 +133,16 @@ export default class RecipesManager {
     });
 
     return filteredRecipes;
+  }
+
+  toggleFavorite(name) {
+    let index = this.#recipes.findIndex((r) => r.name === name);
+    if (index > -1) {
+      this.#recipes[index].favorite = !this.#recipes[index].favorite;
+      this.#saveToLocalStorage();
+      return true;
+    }
+
+    return false;
   }
 }

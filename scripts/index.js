@@ -62,6 +62,9 @@ function generateRecipesList() {
   recipes.forEach((recipe) => {
     recipesList.innerHTML += `
   <article class="recipe card">
+  <div class="favorite ${recipe.favorite && "is-favorite"}" data-name="${recipe.name}">
+  <img src="./assets/icons/favorite.png"/>
+  </div>
     <img
       src="./assets/images/${recipe.image}"
       alt="une image de ${recipe.name}"
@@ -80,6 +83,17 @@ function generateRecipesList() {
     </article>
 `;
   });
+
+  const favButtons = recipesList.querySelectorAll(".favorite");
+  for (const elem of favButtons) {
+    if (elem) {
+      elem.addEventListener("click", () => {
+        if (recipesManager.toggleFavorite(elem.getAttribute("data-name"))) {
+          refreshList();
+        }
+      });
+    }
+  }
 }
 
 function capitalize(str) {
