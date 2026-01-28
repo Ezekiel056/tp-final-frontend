@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script type="module" src="scripts/index.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/616adc9fde.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>GourmeTech</title>
+  </head>
+  <body>
+    <!--
+    ******************************
+    ***** SECTION HEADER  *****
+    ******************************
+    -->
+    <header class="main-header">
+      <a class="site-logo-container" href="index.html">
+        <div class="site-logo">
+          <p class="site-logo">G</p>
+        </div>
+        <p>GourmeTech</p>
+      </a>
+
+      <!--
+      ******************************
+      ***** MAIN NAVIGATION  *****
+      ******************************
+      -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active-page">Accueil</a></li>
+          <li><a href="accueil.html">Ajouter une recette</a></li>
+          <li><a href="favoris.html">Mes favoris</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+        </ul>
+      </nav>
+
+      <!--
+      ******************************
+      ***** ACTION BUTTONS *****
+      ******************************
+      -->
+      <div class="header-buttons">
+        <button id="display-mod" title="Dark-mode">🌙</button>
+        <button id="burger-btn" title="Acceder au menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <!--
+    ******************************
+    ***** SECTION MAIN *****
+    ******************************
+    -->
+    <main>
+      <!--
+      ******************************
+      ****** SEARCH SECTION ********
+      ******************************
+      -->
+      <section id="search-section">
+        <div class="search-container card">
+          <form id="search-form">
+            <!--
+            ******************************
+            ***** SEARCH BY NAME *****
+            ******************************
+            -->
+            <div class="search-input-container">
+              <input
+                type="text"
+                id="recipe-search-input"
+                placeholder="Rechercher une recette..."
+                name="search-text-input"
+              />
+              <button type="submit" class="primary" id="search-recipe-btn">
+                Rechercher
+              </button>
+            </div>
+
+            <!--
+            ******************************
+            ***** FILTERS *****
+            ******************************
+            -->
+            <div class="filters-container">
+              <fieldset class="filter-box">
+                <legend>Catégorie</legend>
+                <ul>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="category" value="entrée" />
+                      Entrée</label
+                    >
+                  </li>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="category" value="plat" />
+                      Plat</label
+                    >
+                  </li>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="category" value="dessert" />
+                      Dessert</label
+                    >
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset class="filter-box">
+                <legend>Temps de préparation</legend>
+                <ul>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="duration" value="30" />
+                      Rapide</label
+                    >
+                  </li>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="duration" value="45" />
+                      Moyen</label
+                    >
+                  </li>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="duration" value="60" />
+                      Long</label
+                    >
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset class="filter-box">
+                <legend>Difficulté</legend>
+                <ul>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="level" value="facile" />
+                      Facile</label
+                    >
+                  </li>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="level" value="moyen" />
+                      Moyen</label
+                    >
+                  </li>
+                  <li>
+                    <label
+                      ><input type="checkbox" name="level" value="difficile" />
+                      Difficile</label
+                    >
+                  </li>
+                </ul>
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!--
+      ******************************
+      ***** RECIPES SECTION *****
+      ******************************
+      -->
+      <section id="recipes-section">
+        <div class="recipes-container" id="recipes-list">
+          <article class="recipe card">
+            <img
+              src="assets/images/tarte-aux-pommes.png"
+              alt="une tarte aux pommes"
+            />
+            <div class="recipe-content">
+              <h2>Tarte au pomme</h2>
+              <div class="tags-list">
+                <ul>
+                  <li class="tag orange">Dessert</li>
+                  <li class="tag green">60 min</li>
+                  <li class="tag blue">Facile</li>
+                </ul>
+              </div>
+              <button class="primary">Voir la recette</button>
+            </div>
+          </article>
+
+          <article class="recipe card">
+            <img
+              src="assets/images/veloute-de-potiron.png"
+              alt="une tarte aux pommes"
+            />
+            <div class="recipe-content">
+              <h2>Tarte au pomme</h2>
+              <div class="tags-list">
+                <ul>
+                  <li class="tag orange">Dessert</li>
+                  <li class="tag green">60 min</li>
+                  <li class="tag blue">Facile</li>
+                </ul>
+              </div>
+              <button class="primary">Voir la recette</button>
+            </div>
+          </article>
+
+          <article class="recipe card">
+            <img
+              src="assets/images/veloute-de-potiron.png"
+              alt="une tarte aux pommes"
+            />
+            <div class="recipe-content">
+              <h2>Tarte au pomme</h2>
+              <div class="tags-list">
+                <ul>
+                  <li class="tag orange">Dessert</li>
+                  <li class="tag green">60 min</li>
+                  <li class="tag blue">Facile</li>
+                </ul>
+              </div>
+              <button class="primary">Voir la recette</button>
+            </div>
+          </article>
+
+          <article class="recipe card">
+            <img
+              src="assets/images/veloute-de-potiron.png"
+              alt="une tarte aux pommes"
+            />
+            <div class="recipe-content">
+              <h2>Tarte au pomme</h2>
+              <div class="tags-list">
+                <ul>
+                  <li class="tag orange">Dessert</li>
+                  <li class="tag green">60 min</li>
+                  <li class="tag blue">Facile</li>
+                </ul>
+              </div>
+              <button class="primary">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!--
+    ******************************
+    ***** FOOTER *****
+    ******************************
+    -->
+    <footer id="footer-section">
+      <div class="footer-container">
+        <p>Navigation</p>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="accueil.html">Ajouter une recette</a></li>
+            <li><a href="favoris.html">Mes favoris</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-container">
+        <p>À propos de GourmeTech</p>
+        <p>
+          GourmeTech est une plateforme de recettes culinaires interactive
+          developpée dans le cadre d'un projet pédagogique
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

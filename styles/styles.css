@@ -1,0 +1,369 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* =================================
+  SECTION : gloabls variables
+  ================================= */
+
+  --gloabal-spacing: 15px;
+  --input-border-radius: 4px;
+  --button-border-radius: 4px;
+
+  /* =================================
+  SECTION :  Theme Light
+  ================================= */
+  --primary-color: #e67f21;
+  --background-grey: #f9f9f9;
+  --background-color: #ffff;
+
+  --button-background-color: var(--primary-color);
+  --text-color: #636363;
+  --text-color-sections: #c58146;
+
+  --card-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  --tag-color-orange: var(--primary-color);
+  --tag-color-green: #2ccb73;
+  --tag-color-blue: #3796db;
+  --spacer-color: #e8e8e8;
+}
+
+main {
+  padding: 0 var(--gloabal-spacing);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+
+  &.primary {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    border-radius: var(--button-border-radius);
+    padding: 5px;
+  }
+}
+
+input {
+  padding: 10px;
+  border: 1px lightgray solid;
+  border-radius: var(--input-border-radius);
+}
+
+/* =================================
+SECTION : COMMON CLASSES
+================================= */
+
+.tag {
+  padding: 6px 8px;
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  &.orange {
+    background-color: var(--tag-color-orange);
+  }
+
+  &.blue {
+    background-color: var(--tag-color-blue);
+  }
+
+  &.green {
+    background-color: var(--tag-color-green);
+  }
+}
+
+.tags-list {
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+}
+
+.card {
+  box-shadow: var(--card-box-shadow);
+  border-radius: 6px;
+  border: none;
+}
+
+/* =================================
+SECTION : HEADER
+================================= */
+
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--gloabal-spacing);
+
+  box-shadow: var(--card-box-shadow);
+  border-radius: 0 0 4px 4px;
+  margin-bottom: var(--gloabal-spacing);
+}
+
+.site-logo-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  color: var(--primary-color);
+  .site-logo {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    text-align: center;
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.main-nav {
+  display: none;
+  border: none;
+  ul {
+    display: flex;
+    gap: var(--gloabal-spacing);
+    a {
+      font-weight: 600;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.active-page {
+  color: var(--primary-color);
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#display-mod {
+  border-radius: 50%;
+  padding: 5px 7px;
+  font-size: 0.9rem;
+}
+
+#burger-btn {
+  padding: 0;
+  width: 20px;
+  height: 15px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  span {
+    background-color: black;
+    height: 2px;
+  }
+}
+
+/* =================================
+SECTION : SEARCH & FILTER SECTION
+================================= */
+
+.search-container {
+  padding: var(--gloabal-spacing) calc(2 * var(--gloabal-spacing));
+}
+
+.search-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filter-box {
+  padding: var(--gloabal-spacing);
+  border: none;
+  background-color: var(--background-grey);
+  legend {
+    padding-top: 30px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gloabal-spacing);
+    label {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+      color: var(--text-color);
+    }
+  }
+}
+
+#recipes-section {
+  margin-top: 30px;
+}
+
+.recipes-container {
+  margin-top: var(--gloabal-spacing);
+  display: grid;
+  gap: var(--gloabal-spacing);
+}
+
+.recipe {
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+}
+
+.recipe-content {
+  padding: var(--gloabal-spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gloabal-spacing);
+  button {
+    padding: 10px;
+  }
+}
+
+#footer-section {
+  margin: 50px 0px;
+  padding: var(--gloabal-spacing) 0;
+  border-top: 2px var(--spacer-color) solid;
+}
+
+.footer-container {
+  padding: var(--gloabal-spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gloabal-spacing);
+  text-align: center;
+  p {
+    font-size: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  p:nth-child(1) {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--gloabal-spacing) / 2);
+    a {
+      font-size: 1rem;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .recipes-container {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(1.5 * var(--gloabal-spacing));
+  }
+
+  .search-input-container {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 0;
+    input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+    }
+    button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .filter-box {
+    ul {
+      flex-direction: row;
+    }
+  }
+  #footer-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer-container {
+    text-align: left;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  #footer-section {
+    padding: 0 calc((100vw - 1024px) / 2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .recipes-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(1.5 * var(--gloabal-spacing));
+  }
+
+  .main-nav {
+    display: block;
+  }
+  #burger-btn {
+    display: none;
+  }
+
+  .filter-box {
+    ul {
+      flex-direction: column;
+    }
+  }
+
+  .filters-container {
+    display: flex;
+    gap: var(--gloabal-spacing);
+  }
+  .filter-box {
+    min-width: 200px;
+  }
+}
