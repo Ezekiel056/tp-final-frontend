@@ -1,5 +1,4 @@
 import RecipesManager from "./RecipesManager.js";
-import Globals from "./Globals.js";
 
 /*****************************************
  ******* GLOBALS VARIABLES
@@ -13,9 +12,6 @@ let recipes = recipesManager.recipes;
 
 // ---- Buttons :
 const btnSearch = document.getElementById("search-recipe-btn");
-const btnDarkMode = document.getElementById("display-mod");
-const btnBurger = document.getElementById("burger-btn");
-const btnCloseMenu = document.getElementById("btn-close-menu");
 
 // ---- Recipies container :
 const recipesList = document.getElementById("recipes-list");
@@ -30,16 +26,7 @@ main(); // <-- script starts here
  ******* FUNCTIONS
  *****************************************/
 function main() {
-  Globals.getUserPreferences();
-  applyDisplayMode();
-
   refreshList(); // <- first render of recipes
-}
-
-function applyDisplayMode() {
-  if (Globals.userPreferences.displayMode === "light")
-    document.body.classList.remove("dark");
-  else document.body.classList.add("dark");
 }
 
 function filterRecipes(e = null) {
@@ -118,18 +105,6 @@ function capitalize(str) {
   return str[0].toUpperCase() + str.slice(1);
 }
 
-function toggleDarkMode() {
-  Globals.toggleDisplayMode();
-  applyDisplayMode();
-}
-
-function showMainMenu() {
-  const mainMenuElem = document.getElementById("main-nav");
-  if (mainMenuElem) {
-    mainMenuElem.classList.toggle("hidden");
-  }
-}
-
 /*****************************************
  ******* WHEN ALL DOM ELEMENTS ARE LOADED
  *****************************************/
@@ -140,9 +115,6 @@ window.addEventListener("DOMContentLoaded", () => {
    *****************************************/
 
   btnSearch.addEventListener("click", filterRecipes);
-  btnDarkMode.addEventListener("click", toggleDarkMode);
-  btnBurger.addEventListener("click", showMainMenu);
-  btnCloseMenu.addEventListener("click", showMainMenu);
   const filters = document.querySelector(".filters-container");
   filters.addEventListener("change", (e) => {
     if (e.target.matches('input[type="checkbox"]')) {
