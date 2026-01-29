@@ -31,14 +31,14 @@ function showRecipe(recipe) {
     recipeContainer.innerHTML = `
 <img
   src="assets/images/${recipe.image}"
-  alt="image de ${recipe.image}"
+  alt="image de ${recipe.name}"
 />
 <h1>Recette de <span class="recipe-name">${recipe.name}</span></h1>
 <div>
   <ul class="tags-list">
-    <li class="tag category">${Globals.capitalize(recipe.category)}</li>
-    <li class="tag duration">${recipe.duration} min</li>
-    <li class="tag level">${Globals.capitalize(recipe.level)}</li>
+    <li tabindex="0" class="tag category" aria-label="Type de recette : ${recipe.category}">${Globals.capitalize(recipe.category)}</li>
+    <li tabindex="0" class="tag duration" aria-label="Durée de préparation : ${recipe.duration} min">${recipe.duration} min</li>
+    <li tabindex="0" class="tag level" aria-label="Difficulté de préparation : ${recipe.level}">${Globals.capitalize(recipe.level)}</li>
   </ul>
 </div>
 ${
@@ -74,7 +74,7 @@ ${
     return list;
   })()}
 </ol>
-  }
+  
 `;
   } else {
     recipeContainer.innerHTML = "<h1>Aucune recette à afficher !</h1>";

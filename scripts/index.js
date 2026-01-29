@@ -65,7 +65,7 @@ function generateRecipesList() {
     recipesList.innerHTML += `
   <article class="recipe card" tabindex="0" aria-label="${recipe.name}">
   <button type="button" class="favorite no-hover ${recipe.favorite ? "is-favorite" : ""}" data-name="${recipe.name}" tabindex="0" aria-label="Ajouter ${recipe.name} aux favoris">
-      <img src="./assets/icons/favorite.png"/>
+      <img src="./assets/icons/favorite.png" alt="Icone favoris"/>
   </button>
     <img
       src="./assets/images/${recipe.image}"
@@ -80,7 +80,7 @@ function generateRecipesList() {
           <li class="tag level">${capitalize(recipe.level)}</li>
         </ul>
       </div>
-      <button type="button" class="primary">Voir la recette</button>
+      <a href="recette.html?name=${recipe.name}" class="buttonlink primary" aria-label="Afficher la recette de ${recipe.name}">Voir la recette</a>
     </div>
     </article>
 `;

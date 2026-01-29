@@ -81,19 +81,23 @@ ol {
   list-style: none;
 }
 
-button {
+button,
+.buttonlink {
   border: none;
   outline: none;
 
   cursor: pointer;
   padding: 5px;
 
+  text-align: center;
+  text-decoration: none;
+
   &.primary {
     background-color: var(--primary-color);
     color: white;
     font-size: 1rem;
     border-radius: var(--button-border-radius);
-    padding: 5px;
+    padding: 10px;
   }
 
   &:hover {
@@ -375,6 +379,22 @@ SECTION : RECIPES
   gap: var(--gloabal-spacing);
   button {
     padding: 10px;
+  }
+}
+
+.show-recipe-link {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: var(--button-border-radius);
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    transition:
+      box-shadow 200ms ease,
+      transform 200ms ease;
+    box-shadow: var(--button-hover-shadow);
+    transform: translateY(-1px);
   }
 }
 
