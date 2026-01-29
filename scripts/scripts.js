@@ -29,6 +29,7 @@ function showMainMenu() {
 }
 
 
+
 /*****************************************
  ******* WHEN ALL DOM ELEMENTS ARE LOADED
  *****************************************/
@@ -41,5 +42,4 @@ window.addEventListener("DOMContentLoaded", () => {
   btnDarkMode.addEventListener("click", toggleDarkMode);
   btnBurger.addEventListener("click", showMainMenu);
   btnCloseMenu.addEventListener("click", showMainMenu);
-
 });

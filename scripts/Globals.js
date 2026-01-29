@@ -32,4 +32,8 @@ export default class Globals {
       Globals.userPreferences.displayMode === "light" ? "dark" : "light";
     Globals.saveUserPreferences();
   }
+
+  static capitalize(str) {
+    return str[0].toUpperCase() + str.slice(1);
+  }
 }
