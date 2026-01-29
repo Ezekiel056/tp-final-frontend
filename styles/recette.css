@@ -1,0 +1,79 @@
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.recipe-container {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  img {
+    height: 300px;
+    object-fit: cover;
+  }
+}
+.tag {
+  font-size: 1.3em;
+  padding: 10px 20px;
+}
+.tags-list {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.recipe-heading-bloc {
+  display: flex;
+  gap: 10px;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  align-items: center;
+  &::after {
+    content: "";
+    height: 1px;
+    width: 1px;
+    flex: 1 1 0;
+    background-color: var(--text-color);
+  }
+  i {
+    position: relative;
+    top: -2px;
+  }
+}
+.ingredients-list {
+  margin: 10px 30px;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  display: grid;
+  list-style: disc;
+  padding: 40px;
+  gap: var(--gloabal-spacing);
+  li {
+    padding-left: 10px;
+  }
+}
+
+.steps-list {
+  list-style: numeric;
+  margin: 10px 30px;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  display: grid;
+  gap: var(--gloabal-spacing);
+  padding: 40px;
+  li {
+    padding-left: 10px;
+  }
+}
+
+/* =================================
+SECTION : MEDIA QUERY Tablette
+================================= */
+@media (min-width: 768px) {
+  .ingredients-list,
+  .steps-list {
+    padding: 40px 50px;
+  }
+}

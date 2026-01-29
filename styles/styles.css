@@ -131,7 +131,7 @@ SECTION : COMMON CLASSES
   padding: 6px 8px;
   color: white;
   font-size: 0.9rem;
-  border-radius: 12px;
+  border-radius: 25px;
   &.category {
     background-color: var(--tag-color-category);
   }
