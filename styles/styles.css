@@ -361,9 +361,10 @@ SECTION : RECIPES
   &.is-favorite {
     background-color: red;
   }
+  padding: 0;
   img {
-    /* Permet de masquer le liseré rouge visible autour quand favoris activé*/
     transform: scale(1.1);
+    /* Permet de masquer le liseré rouge visible autour quand favoris activé*/
   }
 }
 

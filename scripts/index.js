@@ -76,10 +76,10 @@ function clearRecipesList() {
 function generateRecipesList() {
   recipes.forEach((recipe) => {
     recipesList.innerHTML += `
-  <article class="recipe card">
-  <div class="favorite ${recipe.favorite && "is-favorite"}" data-name="${recipe.name}">
-    <img src="./assets/icons/favorite.png"/>
-  </div>
+  <article class="recipe card" tabindex="0" aria-label="${recipe.name}">
+  <button type="button" class="favorite no-hover ${recipe.favorite ? "is-favorite" : ""}" data-name="${recipe.name}" tabindex="0" aria-label="Ajouter ${recipe.name} aux favoris">
+      <img src="./assets/icons/favorite.png"/>
+  </button>
     <img
       src="./assets/images/${recipe.image}"
       alt="une image de ${recipe.name}"
@@ -93,7 +93,7 @@ function generateRecipesList() {
           <li class="tag level">${capitalize(recipe.level)}</li>
         </ul>
       </div>
-      <button class="primary">Voir la recette</button>
+      <button type="button" class="primary">Voir la recette</button>
     </div>
     </article>
 `;
@@ -103,9 +103,11 @@ function generateRecipesList() {
   const favButtons = recipesList.querySelectorAll(".favorite");
   for (const elem of favButtons) {
     if (elem) {
-      elem.addEventListener("click", () => {
+      elem.addEventListener("click", (e) => {
+        e.preventDefault();
         if (recipesManager.toggleFavorite(elem.getAttribute("data-name"))) {
-          refreshList();
+          // refreshList(); // ne pas rafraichir la liste permet de conserver la navigation tab pour accessiblité ..
+          elem.classList.toggle("is-favorite");
         }
       });
     }
