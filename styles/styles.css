@@ -109,7 +109,8 @@ button,
   }
 }
 
-input {
+input,
+textarea {
   padding: 10px;
   border: 1px var(--spacer-color) solid;
   border-radius: var(--input-border-radius);
@@ -118,13 +119,14 @@ input {
 }
 
 input,
+textarea,
 button,
 a {
   outline: none;
   &:focus-visible {
     box-shadow:
-      0 0 0 3px var(--background-color),
-      0 0 0 6px var(--focus-color);
+      0 0 0 2px var(--background-color),
+      0 0 0 4px var(--focus-color);
   }
 }
 /* =================================
@@ -246,10 +248,6 @@ SECTION : HEADER
   &.hidden {
     display: none;
   }
-}
-
-.active-page {
-  color: var(--primary-color);
 }
 
 .header-buttons {
@@ -515,6 +513,7 @@ SECTION : Media query desktop
     height: unset;
     padding-top: unset;
     background-color: transparent;
+
     &.hidden {
       display: unset;
     }
@@ -523,11 +522,23 @@ SECTION : Media query desktop
       display: flex;
       flex-direction: row;
       gap: var(--gloabal-spacing);
+      align-items: center;
+      li {
+        padding: 15px;
+      }
+
       a {
         font-weight: 600;
         color: var(--text-color);
         text-decoration: none;
         font-size: 1rem;
+      }
+      .active-page {
+        background-color: var(--background-grey);
+        border-radius: var(--button-border-radius);
+        a {
+          color: var(--primary-color);
+        }
       }
     }
   }

@@ -1,0 +1,65 @@
+main {
+  display: grid;
+  gap: 30px;
+  padding-top: 50px;
+}
+
+h1,
+h2 {
+  padding: 0 0 30px;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 3rem;
+}
+
+.card {
+  padding: calc(2 * var(--gloabal-spacing));
+  color: var(--text-color);
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gloabal-spacing);
+
+  p {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    strong {
+      font-weight: bold;
+    }
+  }
+}
+
+.contact-section {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+#contact-form {
+  display: grid;
+  grid-template-rows: repeat(4, auto) 150px;
+  row-gap: var(--gloabal-spacing);
+}
+
+@media (min-width: 1024px) {
+  #contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto) 150px;
+    gap: var(--gloabal-spacing);
+
+    textarea,
+    .rgpd-consent {
+      grid-column: 1/-1;
+    }
+    button {
+      grid-column: 2/-1;
+      width: 250px;
+      justify-self: end;
+    }
+  }
+}

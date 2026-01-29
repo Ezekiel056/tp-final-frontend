@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/a-propos.css" />
+    <script type="module" src="scripts/scripts.js"></script>
+    <script type="module" src="scripts/a-propos.js"></script>
+    <script
+      src="https://kit.fontawesome.com/616adc9fde.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>GourmeTech</title>
+  </head>
+  <body>
+    <!--
+    ******************************
+    ***** SECTION HEADER  *****
+    ******************************
+    -->
+    <header class="main-header">
+      <a class="site-logo-container" href="index.html">
+        <div class="site-logo">
+          <p class="site-logo">G</p>
+        </div>
+        <p>GourmeTech</p>
+      </a>
+
+      <!--
+      ******************************
+      ***** MAIN NAVIGATION  *****
+      ******************************
+      -->
+      <nav class="main-nav hidden" id="main-nav">
+        <button
+          id="btn-close-menu"
+          class="btn-close-menu no-hover"
+          type="button"
+          aria-label="Fermer le menu"
+        >
+          X
+        </button>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#">Ajouter une recette</a></li>
+          <li><a href="favoris.html">Mes favoris</a></li>
+          <li class="active-page"><a href="a-propos.html">À propos</a></li>
+        </ul>
+      </nav>
+
+      <!--
+      ******************************
+      ***** ACTION BUTTONS *****
+      ******************************
+      -->
+      <div class="header-buttons">
+        <button id="display-mod" class="no-hover" title="Basculer dark mode">
+          🌙
+        </button>
+        <button id="burger-btn" class="no-hover" title="Acceder au menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <!--
+    ******************************
+    ***** SECTION MAIN *****
+    ******************************
+    -->
+    <main>
+      <section class="about-section card">
+        <h1>A propos de GourmeTech</h1>
+        <p>
+          <strong>GourmeTech</strong> est né d’une idée simple :
+          <em>rendre la cuisine accessible, logique et agréable</em>, sans la
+          transformer en épreuve chronométrée ni en concours de jargon
+          gastronomique.
+        </p>
+
+        <p>
+          Ici, <strong>la technologie est au service du goût</strong>. Les
+          recettes sont structurées, les étapes clarifiées, et l’essentiel est
+          mis en avant. Pas de listes d’ingrédients interminables pour
+          impressionner, pas de discours mystique sur <i>« l’âme »</i> d’un
+          plat. Juste des recettes <strong>fiables</strong>, expliquées
+          correctement, testées, et pensées pour être réellement refaites.
+        </p>
+
+        <p>
+          <strong>GourmeTech</strong> s’adresse à celles et ceux qui aiment bien
+          manger mais aussi <em>comprendre ce qu’ils font</em>. Pourquoi une
+          cuisson fonctionne. Pourquoi un ingrédient est là. Comment adapter une
+          recette sans la casser. La cuisine comme un
+          <strong>système cohérent</strong>, pas comme une suite de tours de
+          magie.
+        </p>
+
+        <p>
+          Le projet <em>évolue en permanence</em>. Nouvelles recettes,
+          améliorations, ajustements. Comme en développement, rien n’est jamais
+          figé : <strong>on observe, on teste, on corrige</strong>.
+        </p>
+
+        <p>
+          <strong>GourmeTech</strong>, c’est donc un
+          <em>laboratoire culinaire du quotidien</em>. Moins de folklore, plus
+          de méthode. Et toujours une bonne raison de
+          <strong>passer en cuisine</strong>.
+        </p>
+      </section>
+
+      <section class="contact-section card">
+        <h2>Nous contacter</h2>
+        <form id="contact-form">
+          <input
+            type="text"
+            placeholder="Prénom"
+            aria-label="Entrez ici votre prénom"
+          />
+          <input
+            type="text"
+            placeholder="Nom"
+            aria-label="Entrez ici votre nom"
+          />
+          <input
+            type="text"
+            placeholder="Email"
+            aria-label="Entrez ici votre adresse email"
+          />
+          <input
+            type="text"
+            placeholder="Téléphone"
+            aria-label="Entrez ici votre n° de téléphone"
+          />
+          <textarea placeholder="Entrez ici votre message"></textarea>
+          <div class="rgpd-consent">
+            <input type="checkbox" id="consent-rgpd-input" name="rgpd" />
+            <label for="consent-rgpd-input"
+              >En envoyant ce formulaire, vous acceptez que vos données soient
+              utilisées <strong>uniquement pour traiter votre demande</strong>,
+              conformément à notre
+              <a href="#">politique de confidentialité</a>.</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="primary"
+            title="Envoyer le message"
+            aria-label="Envoyer le message"
+          >
+            Envoyer
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!--
+    ******************************
+    ***** FOOTER *****
+    ******************************
+    -->
+    <footer id="footer-section">
+      <div class="footer-container">
+        <p>Navigation</p>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#">Ajouter une recette</a></li>
+            <li><a href="favoris.html">Mes favoris</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-container">
+        <p>À propos de GourmeTech</p>
+        <p>
+          GourmeTech est une plateforme de recettes culinaires interactive
+          developpée dans le cadre d'un projet pédagogique
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
