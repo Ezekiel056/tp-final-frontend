@@ -29,6 +29,7 @@
   --input-background-color: #fff;
   --text-color: #636363;
   --text-color-sections: #c58146;
+  --burger-color: #000;
 
   --card-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --card-background-color: #fff;
@@ -51,8 +52,8 @@
   --button-background-color: var(--primary-color);
   --button-hover-shadow:
     0 4px 12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(230, 127, 33, 0.4);
-
   --input-background-color: #292b33;
+  --burger-color: #fff;
 
   --text-color: #e0e0e0;
   --text-color-sections: #f0a15c;
@@ -159,6 +160,10 @@ SECTION : COMMON CLASSES
   background-color: var(--card-background-color);
 }
 
+.no-hover:hover {
+  transform: unset;
+  box-shadow: unset;
+}
 /* =================================
 SECTION : HEADER
 ================================= */
@@ -203,16 +208,39 @@ SECTION : HEADER
 }
 
 .main-nav {
-  display: none;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.895);
+  position: fixed;
+  text-align: center;
+  padding-top: 70px;
+  top: 0;
+  left: 0;
   border: none;
+  width: 100vw;
+  height: 100dvh;
+  .btn-close-menu {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 2.5rem;
+  }
   ul {
     display: flex;
-    gap: var(--gloabal-spacing);
+    flex-direction: column;
+    gap: calc(2 * var(--gloabal-spacing));
+
     a {
       font-weight: 600;
-      color: var(--text-color);
+      color: white;
       text-decoration: none;
+      font-size: 2rem;
     }
+  }
+  &.hidden {
+    display: none;
   }
 }
 
@@ -224,6 +252,7 @@ SECTION : HEADER
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-self: end;
 }
 
 #display-mod {
@@ -234,15 +263,16 @@ SECTION : HEADER
 
 #burger-btn {
   padding: 0;
-  width: 20px;
-  height: 15px;
+  width: 26px;
+  height: 23px;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   span {
-    background-color: black;
-    height: 2px;
+    background-color: var(--burger-color);
+    height: 3px;
+    border-radius: 2px;
   }
 }
 
@@ -319,6 +349,7 @@ SECTION : RECIPES
 }
 
 .favorite {
+  border: white;
   cursor: pointer;
   border-radius: 50px;
   position: absolute;
@@ -330,7 +361,10 @@ SECTION : RECIPES
   &.is-favorite {
     background-color: red;
   }
-  /* background-color: lightgray; */
+  img {
+    /* Permet de masquer le liseré rouge visible autour quand favoris activé*/
+    transform: scale(1.1);
+  }
 }
 
 .recipe-content {
@@ -342,6 +376,10 @@ SECTION : RECIPES
     padding: 10px;
   }
 }
+
+/* =================================
+SECTION : FOOTER
+================================= */
 
 #footer-section {
   margin: 50px 0px;
@@ -375,6 +413,10 @@ SECTION : RECIPES
     }
   }
 }
+
+/* =================================
+SECTION : Media query tablette
+================================= */
 
 @media (min-width: 768px) {
   .recipes-container {
@@ -413,12 +455,21 @@ SECTION : RECIPES
   }
 }
 
+/* =================================
+SECTION : Media query desktop
+================================= */
+
 @media (min-width: 1024px) {
   main {
     max-width: 1024px;
     margin: 0 auto;
   }
 
+  .main-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+  }
   #footer-section {
     padding: 0 calc((100vw - 1024px) / 2);
     display: flex;
@@ -431,8 +482,33 @@ SECTION : RECIPES
     gap: calc(1.5 * var(--gloabal-spacing));
   }
 
+  #btn-close-menu {
+    display: none;
+  }
+
   .main-nav {
+    position: static;
     display: block;
+    justify-self: center;
+    width: unset;
+    height: unset;
+    padding-top: unset;
+    background-color: transparent;
+    &.hidden {
+      display: unset;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: var(--gloabal-spacing);
+      a {
+        font-weight: 600;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1rem;
+      }
+    }
   }
   #burger-btn {
     display: none;

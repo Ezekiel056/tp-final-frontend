@@ -1,27 +1,39 @@
 import RecipesManager from "./RecipesManager.js";
 import Globals from "./Globals.js";
 
-/*
- ******* GLOBALS VARIABLES ***************
- */
+/*****************************************
+ ******* GLOBALS VARIABLES
+ *****************************************/
 const recipesManager = new RecipesManager();
 let recipes = recipesManager.recipes;
 
-/*
- ******* DOM ELEMENTS *******************
- */
+/*****************************************
+ ******* DOM ELEMENTS
+ *****************************************/
+
+// ---- Buttons :
 const btnSearch = document.getElementById("search-recipe-btn");
 const btnDarkMode = document.getElementById("display-mod");
+const btnBurger = document.getElementById("burger-btn");
+const btnCloseMenu = document.getElementById("btn-close-menu");
+
+// ---- Recipies container :
 const recipesList = document.getElementById("recipes-list");
 
-/*
-  START SCRIPT
-*/
-main();
+/*****************************************
+ ******* START SCRIPT
+ *****************************************/
 
+main(); // <-- script starts here
+
+/*****************************************
+ ******* FUNCTIONS
+ *****************************************/
 function main() {
   Globals.getUserPreferences();
   applyDisplayMode();
+
+  refreshList(); // <- first render of recipes
 }
 
 function applyDisplayMode() {
@@ -58,12 +70,15 @@ function clearRecipesList() {
   recipesList.innerHTML = "";
 }
 
+/*****************************************
+ ******* Generate recipe list from recipes array
+ *****************************************/
 function generateRecipesList() {
   recipes.forEach((recipe) => {
     recipesList.innerHTML += `
   <article class="recipe card">
   <div class="favorite ${recipe.favorite && "is-favorite"}" data-name="${recipe.name}">
-  <img src="./assets/icons/favorite.png"/>
+    <img src="./assets/icons/favorite.png"/>
   </div>
     <img
       src="./assets/images/${recipe.image}"
@@ -84,6 +99,7 @@ function generateRecipesList() {
 `;
   });
 
+  // Add clic event on each Favorite ---------------------------------------
   const favButtons = recipesList.querySelectorAll(".favorite");
   for (const elem of favButtons) {
     if (elem) {
@@ -105,16 +121,30 @@ function toggleDarkMode() {
   applyDisplayMode();
 }
 
+function showMainMenu() {
+  const mainMenuElem = document.getElementById("main-nav");
+  if (mainMenuElem) {
+    mainMenuElem.classList.toggle("hidden");
+  }
+}
+
+/*****************************************
+ ******* WHEN ALL DOM ELEMENTS ARE LOADED
+ *****************************************/
+
 window.addEventListener("DOMContentLoaded", () => {
+  /*****************************************
+   ******* EVENT LISTENERS
+   *****************************************/
+
   btnSearch.addEventListener("click", filterRecipes);
   btnDarkMode.addEventListener("click", toggleDarkMode);
-
+  btnBurger.addEventListener("click", showMainMenu);
+  btnCloseMenu.addEventListener("click", showMainMenu);
   const filters = document.querySelector(".filters-container");
   filters.addEventListener("change", (e) => {
     if (e.target.matches('input[type="checkbox"]')) {
       filterRecipes(e);
     }
   });
-
-  refreshList();
 });
