@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/favoris.css" />
+    <script type="module" src="scripts/scripts.js"></script>
+    <script type="module" src="scripts/favoris.js"></script>
+    <script
+      src="https://kit.fontawesome.com/616adc9fde.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>GourmeTech</title>
+  </head>
+  <body>
+    <!--
+    ******************************
+    ***** SECTION HEADER  *****
+    ******************************
+    -->
+    <header class="main-header">
+      <a class="site-logo-container" href="index.html">
+        <div class="site-logo">
+          <p class="site-logo">G</p>
+        </div>
+        <p>GourmeTech</p>
+      </a>
+
+      <!--
+      ******************************
+      ***** MAIN NAVIGATION  *****
+      ******************************
+      -->
+      <nav class="main-nav hidden" id="main-nav">
+        <button
+          id="btn-close-menu"
+          class="btn-close-menu no-hover"
+          type="button"
+          aria-label="Fermer le menu"
+        >
+          X
+        </button>
+        <ul>
+          <li><a href="index.html" class="active-page">Accueil</a></li>
+          <li><a href="accueil.html">Ajouter une recette</a></li>
+          <li><a href="favoris.html">Mes favoris</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+        </ul>
+      </nav>
+
+      <!--
+      ******************************
+      ***** ACTION BUTTONS *****
+      ******************************
+      -->
+      <div class="header-buttons">
+        <button id="display-mod" class="no-hover" title="Basculer dark mode">
+          🌙
+        </button>
+        <button id="burger-btn" class="no-hover" title="Acceder au menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <!--
+    ******************************
+    ***** SECTION MAIN *****
+    ******************************
+    -->
+    <main>
+      <h1>Mes recettes préférées</h1>
+      <!--
+      ******************************
+      ***** RECIPES SECTION *****
+      ******************************
+      -->
+      <section id="recipes-section">
+        <div class="recipes-container" id="recipes-list">
+          <!--
+         ******************************
+         ***** Recipes will come here *
+         ******************************
+         -->
+        </div>
+      </section>
+    </main>
+
+    <!--
+    ******************************
+    ***** FOOTER *****
+    ******************************
+    -->
+    <footer id="footer-section">
+      <div class="footer-container">
+        <p>Navigation</p>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="accueil.html">Ajouter une recette</a></li>
+            <li><a href="favoris.html">Mes favoris</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-container">
+        <p>À propos de GourmeTech</p>
+        <p>
+          GourmeTech est une plateforme de recettes culinaires interactive
+          developpée dans le cadre d'un projet pédagogique
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

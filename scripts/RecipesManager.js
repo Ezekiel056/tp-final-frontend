@@ -302,4 +302,8 @@ export default class RecipesManager {
       return { ...this.#recipes[index] };
     }
   }
+
+  getFavoritesRecipes() {
+    return this.#recipes.filter((recipe) => recipe.favorite);
+  }
 }
