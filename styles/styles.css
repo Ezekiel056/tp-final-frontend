@@ -49,20 +49,20 @@
 .dark {
   --primary-color: #e67f21;
 
-  --background-color: #1a1b20;
+  --background-color: #292a2b;
   --background-grey: #21232a;
 
   --button-background-color: var(--primary-color);
   --button-hover-shadow:
     0 4px 12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(230, 127, 33, 0.4);
-  --input-background-color: #292b33;
+  --input-background-color: #25262b;
   --burger-color: #fff;
 
   --text-color: #e0e0e0;
   --text-color-sections: #f0a15c;
 
   --card-box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 12px;
-  --card-background-color: #1f2128;
+  --card-background-color:  #2d2d31;
 
   --tag-color-category: var(--primary-color);
   --tag-color-duration: #2ccb73;
@@ -70,7 +70,7 @@
 
   --star-background-color: #717171;
 
-  --spacer-color: #2a2a2a;
+  --spacer-color: #3d3d3d;
 }
 
 body {
