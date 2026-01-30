@@ -5,7 +5,7 @@
 - ⭐ Système de notes (étoiles)
 - ❤️ Gestion des favoris
 - 📱 Design responsive (mobile first)
-- 🖨️ Mode impression optimisé
+- 🖨️ Mode impression optimisé (page de recette)
 - 📖 Mode lecture épuré
 
 ---
