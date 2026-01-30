@@ -32,7 +32,7 @@
       ***** MAIN NAVIGATION  *****
       ******************************
       -->
-      <nav class="main-nav hidden" id="main-nav">
+      <nav class="main-nav" id="main-nav">
         <button
           id="btn-close-menu"
           class="btn-close-menu no-hover"
@@ -72,6 +72,11 @@
     ******************************
     -->
     <main>
+      <!--
+      ******************************
+      ***** ABOUT SECTION  *****
+      ******************************
+      -->
       <section class="about-section card">
         <h1>A propos de GourmeTech</h1>
         <p>
@@ -113,32 +118,61 @@
         </p>
       </section>
 
-      <section class="contact-section card">
+      <!--
+      ******************************
+      ***** CONTACT FORM  *****
+      ******************************
+      -->
+
+      <section class="contact-section card hidden">
         <h2>Nous contacter</h2>
+        <p>Les champs avec un asterix sont obligatoires</p>
         <form id="contact-form">
           <input
             type="text"
-            placeholder="Prénom"
+            placeholder="Prénom *"
             aria-label="Entrez ici votre prénom"
+            name="firstName"
+            id="firstName"
+            required
           />
           <input
             type="text"
-            placeholder="Nom"
+            placeholder="Nom *"
             aria-label="Entrez ici votre nom"
+            name="LastName"
+            id="LastName"
+            required
           />
           <input
-            type="text"
-            placeholder="Email"
+            type="email"
+            placeholder="Email *"
             aria-label="Entrez ici votre adresse email"
+            name="email"
+            id="email"
+            required
           />
           <input
             type="text"
             placeholder="Téléphone"
             aria-label="Entrez ici votre n° de téléphone"
+            name="telephone"
+            id="telephone"
           />
-          <textarea placeholder="Entrez ici votre message"></textarea>
+          <textarea
+            placeholder="Entrez ici votre message (au moins 100 caractères) *"
+            aria-label="Entrez ici votre message"
+            name="message"
+            id="message"
+            required
+          ></textarea>
           <div class="rgpd-consent">
-            <input type="checkbox" id="consent-rgpd-input" name="rgpd" />
+            <input
+              required
+              type="checkbox"
+              id="consent-rgpd-input"
+              name="rgpdConsent"
+            />
             <label for="consent-rgpd-input"
               >En envoyant ce formulaire, vous acceptez que vos données soient
               utilisées <strong>uniquement pour traiter votre demande</strong>,
@@ -151,10 +185,33 @@
             class="primary"
             title="Envoyer le message"
             aria-label="Envoyer le message"
+            id="btn-send-message"
           >
             Envoyer
           </button>
         </form>
+      </section>
+
+      <!--
+      ******************************
+      ***** FAQ SECTION  *****
+      ******************************
+      -->
+      <section class="faq-section card">
+        <h2>Foire aux questions</h2>
+        <input
+          type="text"
+          id="faq-search-input"
+          placeholder="rechercher une question"
+          aria-label="Entrez ici votre recherche"
+        />
+        <div class="faq-container">
+          <!--
+          ******************************
+          ***** Questions will come here  *****
+          ******************************
+          -->
+        </div>
       </section>
     </main>
 

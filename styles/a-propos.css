@@ -1,3 +1,7 @@
+:root {
+  --faq-response-background-color: #fdfdfd;
+}
+
 main {
   display: grid;
   gap: 30px;
@@ -9,7 +13,21 @@ h2 {
   padding: 0 0 30px;
   text-align: center;
   color: var(--text-color);
-  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.dark {
+  --faq-response-background-color: #484848;
+  #contact-form {
+    .required {
+      box-shadow:
+        0 0 0 2px var(--background-color),
+        0 0 0 3px rgb(187, 4, 4);
+    }
+  }
 }
 
 .card {
@@ -34,8 +52,10 @@ h2 {
 }
 
 .contact-section {
-  h2 {
-    font-size: 2rem;
+  > p {
+    margin-top: -10px;
+    text-align: center;
+    padding-bottom: 20px;
   }
 }
 
@@ -43,6 +63,75 @@ h2 {
   display: grid;
   grid-template-rows: repeat(4, auto) 150px;
   row-gap: var(--gloabal-spacing);
+  a {
+    color: var(--text-color);
+    font-weight: bold;
+  }
+
+  .required {
+    box-shadow:
+      0 0 0 2px var(--background-color),
+      0 0 0 4px rgb(187, 4, 4);
+  }
+}
+
+.faq-section {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--gloabal-spacing);
+  input {
+    margin: 15px;
+  }
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gloabal-spacing);
+}
+
+.faq-item {
+  border-bottom: 1px var(--spacer-color) solid;
+}
+
+.faq-button {
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: start;
+  padding-left: 20px;
+  font-size: 1.3rem;
+  &::after {
+    transition: transform 300ms ease;
+    content: "▲";
+    position: absolute;
+    right: 15px;
+  }
+  &.collapsed {
+    background-color: transparent;
+    color: var(--text-color);
+    ~ .faq-response {
+      display: none;
+    }
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+  &:hover {
+    transition: background-color 300ms ease;
+    transform: translateY(0);
+    box-shadow: unset;
+  }
+}
+
+.faq-response {
+  padding: 20px 30px;
+  background-color: var(--faq-response-background-color);
 }
 
 @media (min-width: 1024px) {
@@ -62,4 +151,8 @@ h2 {
       justify-self: end;
     }
   }
+}
+
+.hidden {
+  display: none;
 }
