@@ -1,3 +1,6 @@
+:root {
+  --stars-color: rgb(247, 190, 46);
+}
 h1 {
   font-size: 2.5rem;
   text-align: center;
@@ -14,6 +17,17 @@ h1 {
     object-fit: cover;
   }
 }
+.user-note {
+  font-size: 1.5rem;
+  align-self: center;
+  display: flex;
+  gap: 10px;
+  p {
+    color: var(--primary-color);
+  }
+}
+
+
 
 .recipe-name {
   position: relative;

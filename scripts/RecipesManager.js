@@ -38,6 +38,7 @@ export default class RecipesManager {
         category: "dessert",
         duration: "60",
         level: "facile",
+        rating: 0,
         favorite: true,
         image: "tarte-aux-pommes.png",
         ingredients: [
@@ -61,6 +62,7 @@ export default class RecipesManager {
         category: "plat",
         duration: "45",
         level: "moyen",
+        rating: 4,
         favorite: false,
         image: "ratatouille-provencale.png",
         ingredients: [
@@ -85,6 +87,7 @@ export default class RecipesManager {
         duration: "30",
         level: "facile",
         favorite: false,
+        rating: 2,
         image: "veloute-de-potiron.png",
         ingredients: [
           { ingredient: "potiron", qty: "600 g" },
@@ -107,6 +110,7 @@ export default class RecipesManager {
         duration: "30",
         level: "facile",
         favorite: false,
+        rating: 2,
         image: "salade-cesar.png",
         ingredients: [
           { ingredient: "salade romaine", qty: 1 },
@@ -129,6 +133,7 @@ export default class RecipesManager {
         duration: "60",
         level: "difficile",
         favorite: false,
+        rating: 5,
         image: "boeuf-bourgignon.png",
         ingredients: [
           { ingredient: "bœuf", qty: "800 g" },
@@ -151,6 +156,7 @@ export default class RecipesManager {
         duration: "30",
         level: "facile",
         favorite: false,
+        rating: 0,
         image: "pates-carbo.png",
         ingredients: [
           { ingredient: "pâtes", qty: "400 g" },
@@ -173,6 +179,7 @@ export default class RecipesManager {
         duration: "45",
         level: "facile",
         favorite: false,
+        rating: 5,
         image: "mousse-chocolat.png",
         ingredients: [
           { ingredient: "chocolat noir", qty: "200 g" },
@@ -194,6 +201,7 @@ export default class RecipesManager {
         duration: "30",
         level: "moyen",
         favorite: false,
+        rating: 5,
         image: "creme-brulee.png",
         ingredients: [
           { ingredient: "crème liquide", qty: "50 cl" },
@@ -216,6 +224,7 @@ export default class RecipesManager {
         duration: "30",
         level: "facile",
         favorite: false,
+        rating: 1,
         image: "burger.png",
         ingredients: [
           { ingredient: "pain burger", qty: 2 },
@@ -238,6 +247,7 @@ export default class RecipesManager {
         duration: "60",
         level: "difficile",
         favorite: false,
+        rating: 3,
         image: "mille-feuille.png",
         ingredients: [
           { ingredient: "pâte feuilletée", qty: 3 },
@@ -305,5 +315,15 @@ export default class RecipesManager {
 
   getFavoritesRecipes() {
     return this.#recipes.filter((recipe) => recipe.favorite);
+  }
+
+  setRecipeNote(name, rating) {
+    let i = this.#getRecipeIndexByName(name);
+    if (i > -1) {
+      this.#recipes[i].rating = rating;
+      this.#saveToLocalStorage();
+      return true;
+    }
+    return false;
   }
 }

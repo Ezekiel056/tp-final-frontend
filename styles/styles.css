@@ -37,6 +37,8 @@
   --tag-color-category: var(--primary-color);
   --tag-color-duration: #2ccb73;
   --tag-color-level: #3796db;
+
+  --star-background-color: #000;
   --spacer-color: #e8e8e8;
 }
 
@@ -64,6 +66,8 @@
   --tag-color-category: var(--primary-color);
   --tag-color-duration: #2ccb73;
   --tag-color-level: #4aa3e0;
+
+  --star-background-color: #717171;
 
   --spacer-color: #2a2a2a;
 }
@@ -132,7 +136,13 @@ a {
 /* =================================
 SECTION : COMMON CLASSES
 ================================= */
-
+.stars {
+  cursor: pointer;
+  color: var(--star-background-color);
+  .active {
+    color: var(--stars-color);
+  }
+}
 .tag {
   padding: 6px 8px;
   color: white;
