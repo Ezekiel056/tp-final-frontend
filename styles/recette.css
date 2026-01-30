@@ -188,9 +188,10 @@ SECTION : MEDIA QUERY POUR IMPRESSION
     margin: 0 30px !important;
     display: initial;
   }
+
   .ingredients-list {
     display: grid;
-    gap: 0;
+    gap: 0px;
     grid-auto-flow: column;
     grid-template-rows: repeat(5, auto); /* max 5 items par colonne */
   }

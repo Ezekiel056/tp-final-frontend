@@ -36,6 +36,8 @@ function showRecipe(recipe) {
     <h1>Recette de <span class="recipe-name">${recipe.name}</span></h1>
     <div class="user-note no-print">
       <div class="stars">
+
+  
       
         <i class="fa-solid fa-star ${recipe.rating >= 1 ? "active" : ""}"></i>
         <i class="fa-solid fa-star ${recipe.rating >= 2 ? "active" : ""}"></i>
