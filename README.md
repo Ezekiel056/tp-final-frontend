@@ -15,6 +15,7 @@
 - HTML5
 - CSS
 - JavaScript vanilla, aucun framework
+- Utilisation du localStorage pour stocker les recettes et les preferences utilisateur.
 
 ## 🚀 Récuperer le projet
 
