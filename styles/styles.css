@@ -198,6 +198,9 @@ SECTION : HEADER
   border-radius: 0 0 4px 4px;
   margin-bottom: var(--gloabal-spacing);
   background-color: var(--background-color);
+  h1 {
+    font-size: 1.5rem;
+  }
 }
 
 .site-logo-container {
