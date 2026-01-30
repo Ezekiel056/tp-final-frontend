@@ -62,6 +62,7 @@ function clearRecipesList() {
  *****************************************/
 function generateRecipesList() {
   recipes.forEach((recipe) => {
+    console.log(recipe);
     recipesList.innerHTML += `
   <article class="recipe card" tabindex="0" aria-label="${recipe.name}">
   <button type="button" class="favorite no-hover ${recipe.favorite ? "is-favorite" : ""}" data-name="${recipe.name}" tabindex="0" aria-label="Ajouter ${recipe.name} aux favoris">
@@ -79,6 +80,15 @@ function generateRecipesList() {
           <li class="tag duration">${recipe.duration} min</li>
           <li class="tag level">${capitalize(recipe.level)}</li>
         </ul>
+        <div class="user-note">
+          <div class="stars">
+            <i class="fa-solid fa-star ${recipe.rating >= 1 ? "active" : ""}"></i>
+            <i class="fa-solid fa-star ${recipe.rating >= 2 ? "active" : ""}"></i>
+            <i class="fa-solid fa-star ${recipe.rating >= 3 ? "active" : ""}"></i>
+            <i class="fa-solid fa-star ${recipe.rating >= 4 ? "active" : ""}"></i>
+            <i class="fa-solid fa-star ${recipe.rating >= 5 ? "active" : ""}"></i>
+          </div>
+      </div>
       </div>
       <a href="recette.html?name=${recipe.name}" class="buttonlink primary" aria-label="Afficher la recette de ${recipe.name}">Voir la recette</a>
     </div>

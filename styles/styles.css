@@ -16,6 +16,7 @@
   --input-border-radius: 4px;
   --button-border-radius: 4px;
   --focus-color: #213da2;
+  --stars-color: rgb(247, 190, 46);
 
   /* =================================
   SECTION :  Theme Light
@@ -137,7 +138,6 @@ a {
 SECTION : COMMON CLASSES
 ================================= */
 .stars {
-  cursor: pointer;
   color: var(--star-background-color);
   .active {
     color: var(--stars-color);
@@ -162,6 +162,9 @@ SECTION : COMMON CLASSES
 }
 
 .tags-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   ul {
     display: flex;
     flex-direction: row;
@@ -352,12 +355,11 @@ SECTION : RECIPES
     color: var(--text-color);
   }
 
-  &:hover {
-    cursor: pointer;
+  /* &:hover {
     transition: transform 200ms ease;
     transform: translateY(-1px);
     box-shadow: var(--button-hover-shadow);
-  }
+  } */
 }
 
 .favorite {

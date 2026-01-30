@@ -1,10 +1,10 @@
-:root {
-  --stars-color: rgb(247, 190, 46);
-}
 h1 {
   font-size: 2.5rem;
   text-align: center;
   color: var(--text-color);
+}
+.stars {
+  cursor: pointer;
 }
 
 .recipe-container {
@@ -26,8 +26,6 @@ h1 {
     color: var(--primary-color);
   }
 }
-
-
 
 .recipe-name {
   position: relative;
