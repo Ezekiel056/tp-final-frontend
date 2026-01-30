@@ -21,6 +21,7 @@ main {
     object-fit: cover;
   }
 }
+
 .user-note {
   font-size: 1.5rem;
   align-self: center;
@@ -31,6 +32,9 @@ main {
   }
 }
 
+#print-recipe {
+  align-self: end;
+}
 .recipe-name {
   position: relative;
   &::before {

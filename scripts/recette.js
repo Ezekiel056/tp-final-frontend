@@ -33,6 +33,7 @@ function showRecipe(recipe) {
       src="assets/images/${recipe.image}"
       alt="image de ${recipe.name}"
     />
+    <button id="print-recipe" class="primary no-print">Imprimer la recette</button>
     <h1>Recette de <span class="recipe-name">${recipe.name}</span></h1>
     <div class="user-note no-print">
       <div class="stars">
@@ -112,3 +113,10 @@ function showRecipe(recipe) {
 
   return true;
 }
+
+/*****************************************
+ ******* Event Listeners
+ *****************************************/
+document.getElementById("print-recipe").addEventListener("click", () => {
+  window.print();
+});
