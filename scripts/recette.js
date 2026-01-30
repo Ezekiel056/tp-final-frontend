@@ -34,7 +34,7 @@ function showRecipe(recipe) {
       alt="image de ${recipe.name}"
     />
     <h1>Recette de <span class="recipe-name">${recipe.name}</span></h1>
-    <div class="user-note">
+    <div class="user-note no-print">
       <div class="stars">
       
         <i class="fa-solid fa-star ${recipe.rating >= 1 ? "active" : ""}"></i>
@@ -61,7 +61,7 @@ function showRecipe(recipe) {
       <i class="fa-solid fa-bowl-food"></i>
       <p>Ingrédients</p>
     </div>
-    <ul class="ingredients-list card">
+    <ul class="ingredients-list">
       ${(() => {
         let list = "";
         for (const ingredient of recipe.ingredients) {
@@ -75,7 +75,7 @@ function showRecipe(recipe) {
       <p>Etapes de préparation</p>
     </div>
 
-    <ol class="steps-list card">
+    <ol class="steps-list">
       ${(() => {
         let list = "";
         for (const step of recipe.steps) {

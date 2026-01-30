@@ -3,12 +3,16 @@ h1 {
   text-align: center;
   color: var(--text-color);
 }
+
+main {
+  box-shadow: var(--card-box-shadow);
+  padding: 40px;
+}
 .stars {
   cursor: pointer;
 }
 
 .recipe-container {
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -80,6 +84,8 @@ h1 {
   color: var(--text-color);
   font-size: 1.4rem;
   display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, auto);
   list-style: disc;
   padding: 40px;
   gap: var(--gloabal-spacing);
@@ -152,6 +158,10 @@ SECTION : MEDIA QUERY POUR IMPRESSION
     background-color: white;
   }
 
+  main {
+    box-shadow: unset;
+  }
+
   .no-print {
     display: none !important;
   }
@@ -170,6 +180,19 @@ SECTION : MEDIA QUERY POUR IMPRESSION
       height: 150px;
       object-fit: cover;
     }
+  }
+
+  .ingredients-list,
+  .steps-list {
+    padding: 5px !important;
+    margin: 0 30px !important;
+    display: initial;
+  }
+  .ingredients-list {
+    display: grid;
+    gap: 0;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(5, auto); /* max 5 items par colonne */
   }
 }
 
