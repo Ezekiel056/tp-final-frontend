@@ -28,6 +28,7 @@ function main() {
 
 function showRecipe(recipe) {
   if (recipe) {
+    document.title = `GourmeTech - ${recipe.name}`;
     recipeContainer.innerHTML = `<img
       src="assets/images/${recipe.image}"
       alt="image de ${recipe.name}"
