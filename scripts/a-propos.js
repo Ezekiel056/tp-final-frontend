@@ -14,23 +14,35 @@ function main() {
 
 function showQuestions() {
   const faq = document.querySelector(".faq-container");
+  const enableFiltre = searchFaqStr.trim() != "";
   if (faq) {
     faq.innerHTML = "";
-    faqQuestions.forEach((item) => {
-      if (searchFaqStr.trim() != "") {
-        if (!item.question.toLowerCase().includes(searchFaqStr.toLowerCase())) {
-          console.log(searchFaqStr.trim());
-          return;
+    faqQuestions.forEach((faqItem) => {
+      let item = { ...faqItem };
+      // filtre les questions / réponses en fonction des termes rechercés
+      if (enableFiltre) {
+        if (
+          !item.question.toLowerCase().includes(searchFaqStr.toLowerCase()) &&
+          !item.answer.toLowerCase().includes(searchFaqStr.toLowerCase())
+        ) {
+          return; // ignore cette itération si ca ne match pas
         }
       }
-      console.log("ok");
+
+      if (enableFiltre) {
+        const escaped = searchFaqStr.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const regex = new RegExp(`(${escaped})`, "gi");
+        item.question = item.question.replace(regex, "<mark>$1</mark>");
+        item.answer = item.answer.replace(regex, "<mark>$1</mark>");
+      }
+
       const div = document.createElement("div");
       div.classList.add("faq-item");
       div.innerHTML = `
             <button
               aria-label="${item.question}"
               type="button"
-              class="faq-button collapsed"
+              class="faq-button ${enableFiltre ? "" : "collapsed"}"
             >
               <span>${item.question}</span>
             </button>
@@ -38,6 +50,7 @@ function showQuestions() {
               <p>${item.answer}</p>
             </div>
       `;
+
       faq.appendChild(div);
     });
 
