@@ -62,7 +62,6 @@ function clearRecipesList() {
  *****************************************/
 function generateRecipesList() {
   recipes.forEach((recipe) => {
-    console.log(recipe);
     recipesList.innerHTML += `
   <article class="recipe card" tabindex="0" aria-label="${recipe.name}">
   <button type="button" class="favorite no-hover ${recipe.favorite ? "is-favorite" : ""}" data-name="${recipe.name}" tabindex="0" aria-label="Ajouter ${recipe.name} aux favoris">
