@@ -102,3 +102,77 @@ SECTION : MEDIA QUERY Tablette
     padding: 40px 50px;
   }
 }
+
+/* =================================
+SECTION : MEDIA QUERY POUR IMPRESSION
+================================= */
+
+@media print {
+  header,
+  footer {
+    display: none !important;
+  }
+  :root {
+    font-size: 11px;
+  }
+  * {
+    --primary-color: #e67f21;
+    --background-grey: #f9f9f9;
+    --background-color: #ffff;
+
+    --button-background-color: var(--primary-color);
+    --button-hover-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --input-background-color: #fff;
+    --text-color: #636363;
+    --text-color-sections: #c58146;
+    --burger-color: #000;
+
+    --card-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --card-background-color: #fff;
+
+    --tag-color-category: var(--primary-color);
+    --tag-color-duration: #2ccb73;
+    --tag-color-level: #3796db;
+    --spacer-color: #e8e8e8;
+  }
+
+  body {
+    background-color: white;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .card {
+    border: unset;
+    box-shadow: unset;
+    padding: 0;
+  }
+  .recipe-container {
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    img {
+      height: 150px;
+      object-fit: cover;
+    }
+  }
+}
+
+/* =================================
+SECTION : READING MODE
+================================= */
+
+.reading-mode {
+  font-family: serif;
+  line-height: 1.5;
+
+  header,
+  footer,
+  buuton,
+  img {
+    display: none !important;
+  }
+}

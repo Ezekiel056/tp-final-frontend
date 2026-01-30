@@ -37,16 +37,16 @@ function showRecipe(recipe) {
 <div>
   <ul class="tags-list">
     <li tabindex="0" class="tag category" aria-label="Type de recette : ${recipe.category}">${Globals.capitalize(recipe.category)}</li>
-    <li tabindex="0" class="tag duration" aria-label="Durée de préparation : ${recipe.duration} min">${recipe.duration} min</li>
+    <li tabindex="0" class="tag duration" aria-label="Durée de préparation : ${recipe.duration} minutes">${recipe.duration} min</li>
     <li tabindex="0" class="tag level" aria-label="Difficulté de préparation : ${recipe.level}">${Globals.capitalize(recipe.level)}</li>
   </ul>
 </div>
 ${
   recipe.favorite === false
-    ? `<button class="primary" id="btn-add-to-favorites">Ajouter cette recette à mes favoris</button>`
+    ? `<button class="primary no-print" id="btn-add-to-favorites">Ajouter cette recette à mes favoris</button>`
     : ``
 }
-
+</div>
 <div class="recipe-heading-bloc">
   <i class="fa-solid fa-bowl-food"></i>
   <p>Ingrédients</p>
